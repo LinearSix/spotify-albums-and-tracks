@@ -7,19 +7,38 @@ body{
 	padding:0 10px;
 }
 
+table{
+	width: auto;
+	border: gray;
+	border-width: 1px;
+}
+
+td{
+	border: gray;
+	border-width: 1px;
+}
+
 h1, h2, h3{
 	line-height:1.2
 }
 
-#q-results li {
-	color: #006fff;
-	cursor: pointer;
-	text-decoration: underline;
+#search{
+	height: 20px;
 }
 
-#app {
-	border: 1px solid black;
-	width: 800px;
-	margin: 0 auto;
-	padding: 20px;
+#mainName{
+	height: 20px;
+}
+
+#mainImg{
+	height: 20px;
+}
+
+#types{
+	height: 20px;
+}
+
+#appended{
+	/* scroll-behavior: auto; */
+	height: 500px;
 }

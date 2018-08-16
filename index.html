@@ -3,21 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Pokemon Silliness</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
     <script defer src="javascript/app.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Pokemon Silliness</h1>
-    <form method="GET">
-      <!-- <input type="text" name="input" placeholder="Search for a Pokemon"> -->
-      <button type="submit" name="pokemon" value="pokemon">Pokemon</button>
-      <button type="submit" name="type" value="type">Type</button>
-      <button type="submit" name="ability" value="ability">Ability</button>
-    </form>
-    <div class="ui link cards">
-
-    </div>
+    <table>
+      <tr>
+        <td id="search">
+          <form method="GET">
+            <input type="text" name="search" placeholder="Search for a Pokemon">
+            <button type="submit">Pokemon</button>
+          </form>
+        </td>
+        <td rowspan="5">
+          <div id="appended" style="overflow:auto;">
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td id="mainName"></td>
+      </tr>
+      <tr>
+        <td id="mainImg"></td>
+      </tr>
+      <tr>
+        <td id="types"></td>
+      </tr>
+      <tr>
+        <td id="abilities"></td>
+      </tr>
+    </table>
   </body> 
 </html>
