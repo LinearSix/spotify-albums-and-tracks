@@ -1,70 +1,63 @@
-// Self envoking function! once the document is ready, bootstrap our application.
-// We do this to make sure that all the HTML is rendered before we do things 
-// like attach event listeners and any dom manipulation.  
-(function(){
-  $(document).ready(function(){
-    bootstrapSpotifySearch();
-  })
-})();
+console.log(`poke`);
+// document.addEventListener('DOMContentLoaded', function() {
+  const pokemonlist = document.getElementsByClassName("cards")[0];
 
-/**
-  This function bootstraps the spotify request functionality.
-*/
-function bootstrapSpotifySearch(){
+  const allthepokemons = [
+    'bulbosour',
+    'sourpatch',
+    'ivyleage',
+    'bannasore',
+    'pikachu'
+  ]
 
-  var userInput, searchUrl, results;
-  var outputArea = $("#q-results");
-
-  $('#spotify-q-button').on("click", function(){
-      var spotifyQueryRequest;
-      spotifyQueryString = $('#spotify-q').val();
-      searchUrl = "https://api.spotify.com/v1/search?type=artist&q=" + spotifyQueryString;
-
-      // Generate the request object
-      spotifyQueryRequest = $.ajax({
-          type: "GET",
-          dataType: 'json',
-          url: searchUrl
-      });
-
-      // Attach the callback for success 
-      // (We could have used the success callback directly)
-      spotifyQueryRequest.done(function (data) {
-        var artists = data.artists;
-
-        // Clear the output area
-        outputArea.html('');
-
-        // The spotify API sends back an arrat 'items' 
-        // Which contains the first 20 matching elements.
-        // In our case they are artists.
-        artists.items.forEach(function(artist){
-          var artistLi = $("<li>" + artist.name + " - " + artist.id + "</li>")
-          artistLi.attr('data-spotify-id', artist.id);
-          outputArea.append(artistLi);
-
-          artistLi.click(displayAlbumsAndTracks);
-        })
-      });
-
-      // Attach the callback for failure 
-      // (Again, we could have used the error callback direcetly)
-      spotifyQueryRequest.fail(function (error) {
-        console.log("Something Failed During Spotify Q Request:")
-        console.log(error);
-      });
+  fetch(`https://cors-anywhere.herokuapp.com/http://pokeapi.co/api/v2/pokemon/`)
+    .then(response => response.json())
+    .then( (data) => {
+        console.log(data.results);
+        pokes = data.results;
+        for (let poke in pokes) {
+          // console.log(pokes[poke].name);
+          createPokemonCard(pokes[poke].name, pokes[poke].url)
+        };
   });
-}
 
-/* COMPLETE THIS FUNCTION! */
-function displayAlbumsAndTracks(event) {
-  var appendToMe = $('#albums-and-tracks');
+  // setTimeout(() => {  
+    function createPokemonCard(x, y) {
+      console.log(x);
+      console.log(y);
+      let pokeName = x;
+      let pokeUrl = y;
+      return `
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar2/large/matthew.png">
+            </div>
+            <div class="content">
+              <div class="header">${pokeName}!</div>
+              <div class="meta">
+                <a>Friends</a>
+              </div>
+              <div class="description">
+                ${pokeName} is an interior designer living in New York.
+                <a href="${pokeUrl}">More Info</a>
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="right floated">
+                ${pokeUrl}
+              </span>
+              <span>
+                <i class="user icon"></i>
+                  ${pokeUrl}
+              </span>
+            </div>
+          </div>
+          `
+    }
+  // }, 1000)
+// });
+// pokemonlist.innerHTML = allthepokemons.map(createPokemonCard).join("")
+// https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/mewtwo.png
+// https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/mewtwo.png
 
-  // These two lines can be deleted. They're mostly for show. 
-  console.log("you clicked on:");
-  console.log($(event.target).attr('data-spotify-id'));//.attr('data-spotify-id'));
-}
-
-/* YOU MAY WANT TO CREATE HELPER FUNCTIONS OF YOUR OWN */
-/* THEN CALL THEM OR REFERENCE THEM FROM displayAlbumsAndTracks */
-/* THATS PERFECTLY FINE, CREATE AS MANY AS YOU'D LIKE */
+pokemonlist.innerHTML = allthepokemons.map(createPokemonCard).join("")

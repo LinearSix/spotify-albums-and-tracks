@@ -2,26 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>These are examples of API's in action</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
-    <script src="javascript/app.js" charset="utf-8"></script>
+    <title>Pokemon Silliness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
+    <script defer src="javascript/app.js" charset="utf-8"></script>
   </head>
   <body>
-  	<h1> Music Is Fun </h1>
-      <div>
-        <h2>Spotify Artist Search</h2>
-        <div>
-          <label for="spotify-q"></label>
-          <input type="text" name="q" value="" id="spotify-q">
-          <input type="button" name="name" value="Search" id="spotify-q-button">
-          <h3>Spotify Search Results:</h3>
-          <div id="q-results" class="results"></div>
-        </div>
-        <hr>
-      </div>
-      <div id='albums-and-tracks'></div>
-  </body>
+    <h1>Pokemon Silliness</h1>
+    <form method="GET">
+      <!-- <input type="text" name="input" placeholder="Search for a Pokemon"> -->
+      <button type="submit" name="pokemon" value="pokemon">Pokemon</button>
+      <button type="submit" name="type" value="type">Type</button>
+      <button type="submit" name="ability" value="ability">Ability</button>
+    </form>
+    <div class="ui link cards">
+
+    </div>
+  </body> 
 </html>
