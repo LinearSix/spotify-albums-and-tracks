@@ -8,31 +8,50 @@
     <script defer src="javascript/app.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Pokemon Silliness</h1>
+    <h1 class="mainCardName">Pokemon Silliness</h1>
     <table>
       <tr>
+        <form method="GET">
         <td id="search">
-          <form method="GET">
-            <input type="text" name="search" placeholder="Search for a Pokemon">
-            <button type="submit">Pokemon</button>
-          </form>
+              <select name="search" id="selectName">
+              </select>
+            <button type="submit">GO!</button>
+          </td>
+          <td rowspan="2">
+            <div id="appended" style="overflow:scroll; height:500px;"></div>
+            </div>
+          </td>
+        </form>
+        </tr>
+      <tr>
+        <td id="mainName">
+        </p>
+          <div class="card">
+            <div class="decorative">
+              <div class="top">
+                <div class="species">
+                  <h3 id="mainCardName"></h3>
+                </div>
+                <div class="border" id="mainCardImg">
+                </div>
+              </div>
+              <div class="bottom">
+                <div id="types"><h2>Types</h2></h2></div>
+                <!-- Edit everything in white to customize -->
+                <p class="interesting_fact">Interesting Facts</p>
+                <p class="description">Stats</p>
+                <ul>
+                  <li><span>Stat</span>: Value</li>
+                  <li><span>Stat</span>: Value</li>
+                  <li><span>Stat</span>: Value</li>
+                  <li><span>Stat</span>: Value</li>
+                </ul>
+        
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
         </td>
-        <td rowspan="5">
-          <div id="appended" style="overflow:auto;">
-        </div>
-        </td>
-      </tr>
-      <tr>
-        <td id="mainName"></td>
-      </tr>
-      <tr>
-        <td id="mainImg"></td>
-      </tr>
-      <tr>
-        <td id="types"></td>
-      </tr>
-      <tr>
-        <td id="abilities"></td>
       </tr>
     </table>
   </body> 

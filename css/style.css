@@ -1,44 +1,119 @@
-body{
-	margin:40px auto;
-	width:100%;
-	line-height:1.6;
-	font-size:18px;
-	color:#444;
-	padding:0 10px;
+/* The items in front of the brackets access the html elements in the panel to the left */
+html {
+	font-size: 12px;
+}
+  
+ul {
+	list-style-type: none;
+}
+  
+span {
+	font-weight: bold;
+}
+  
+.card {
+	background: linear-gradient(to bottom right, #330066, #5c00e6, #0000cc, #330066);
+	/*   border-radius: 5px; */
+	box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.36);
+	border: solid black 1px;
+	padding: 5px;
+	width: 250px;
+}
+  
+.decorative {
+  /*  I just learned about color gradients. That's how I got the background to go from red to yellow. Here's one place to find color gradients:
+	https://www.w3schools.com/css/css3_gradients.asp*/
+	background: linear-gradient(to bottom right, red, yellow);
+	border-radius: 4px;
+	border: 1px black;
+	box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.36);
+	padding: 5px;
+}
+  
+.top {
+	font-family: Arial, Helvetica, sans-serif;
+}
+  
+.species {
+	border: solid black 2px;
+	border-radius: 4px;
+	background-color: rgba(77, 51, 25, 0.3);
+	/*   box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.36); */
+	color: white;
+	display: inline-block;
+	padding: 11px;
+	box-sizing: border-box;
+	margin-left: 16px;
+}
+  
+.top img {
+	height: 200px;
+	width: 200px;
+	border-radius: 4px;
+	box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.17);
+	border: solid black 2px;
+	margin: 16px;
+}
+  
+.bottom {
+	border: solid black 2px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.17);
+	padding: 2px;
+	margin: 7px;
+	color: white;
+	background-color: rgba(77, 51, 25, 0.69);
+}
+  
+.interesting_fact {
+	font-style: italic;
+}
+  
+.description {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+.info {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-table{
-	width: auto;
-	border: gray;
-	border-width: 1px;
+h1{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-td{
-	border: gray;
-	border-width: 1px;
+h2{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1, h2, h3{
-	line-height:1.2
+select{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#search{
-	height: 20px;
+button{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-#mainName{
-	height: 20px;
+  
+h3.species {
+	color: white;
+	font-size: 20px;
+	margin: 11px 0 0 78px;
+	padding-top: 2px;
+	text-align: center;
+	/* width: 151px; */
+	height: 26px;
+	font-family: "papyrus";
 }
-
-#mainImg{
-	height: 20px;
-}
-
-#types{
-	height: 20px;
+  
+.species h3 {
+	font-size: 25px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	/* text-align: center; */
+	display: inline-block;
+	margin: 0 auto;
 }
 
 #appended{
-	/* scroll-behavior: auto; */
-	height: 500px;
+	width: 400px;
+	align-content: center;
+	align-items: center;
 }
